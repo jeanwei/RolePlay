@@ -7,7 +7,7 @@ A Basic PlayGround to go around
     TourGuide
       -> has_many: tourists
     Translator
-      -> has_many: translators
+      -> has_many: tourists
 
     A TourGuide can be Translator 
     A Tourist cannot be TourGuide/Translator.
