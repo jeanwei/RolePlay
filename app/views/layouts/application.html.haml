@@ -1,0 +1,21 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %title RolePlay
+    = csrf_meta_tags
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css'
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  %body
+    = render partial: 'layouts/header'
+    .content.container
+      .row#messages
+        .container
+          - flash.each do |key, value|
+            %div{:class => "alert #{flash_to_css key}"}
+              = value
+              %a.close{ href: "#", "data-dismiss" => "alert", "aria-label" => "close" } &times;
+      .row
+        = yield

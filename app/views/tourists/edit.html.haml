@@ -1,0 +1,14 @@
+.row
+  .col-sm-8.col-sm-offset-2
+    %h1 Edit Profile
+    %b
+    = form_for @tourist, html: { class: 'form-horizontal' } do |f|
+      = render 'shared/error_messages', object: f.object
+      %br
+      .clearfix
+      = render partial: 'form', locals: { f: f, start_year: @start_year }
+      .form-group
+        .col-sm-2.col-sm-offset-2
+          = f.submit 'Update', class: 'btn btn-primary'
+        .col-sm-2.col-sm-offset-1
+          = link_to 'Cancel', :back, class: 'btn btn-danger'

@@ -1,0 +1,34 @@
+A Basic PlayGround to go around
+  - Delegation over inheritance design pattern
+  - With following Ideas:
+    Agency 
+      -> has_many: tour_guides
+      -> has_many: translators
+    TourGuide
+      -> has_many: tourists
+    Translator
+      -> has_many: translators
+
+    A TourGuide can be Translator 
+    A Tourist cannot be TourGuide/Translator.
+    A Tourist can be assigned to TourGuide & Translator
+
+Feature: Register a new user
+  As a visitor
+  So that I have access to the application
+  I want to register myself to be a new user
+
+Feature: Login and logout as an existing user
+  As a registered user
+  So that I have access to the application
+  I want to login to my account
+
+Feature: Edit personal details
+  As a tourist
+  So that my personal details are up-to-date
+  I would like to edit them
+
+Feature: Self assigned to tourists
+  As a tour guide
+  I would like to assign myself to a tourist
+

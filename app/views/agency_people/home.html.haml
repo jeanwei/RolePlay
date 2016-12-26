@@ -1,0 +1,23 @@
+%br
+.row
+  .col-sm-3
+    %h3
+      Agency Person
+  .col-sm-9
+    = render partial: 'info', locals: { user: @primary_identity }
+%br
+%clearfix
+.row
+  .col-sm-6
+    %h3
+      Role
+    - if @translator
+      = render partial: 'translators/info', locals: { user: @translator }
+    - if @tour_guide
+      = render partial: 'tour_guides/info', locals: { user: @tour_guide }
+  .col-sm-6
+    %h3
+      Task
+    = render partial: 'tourists/list', locals: { tourists: @tourists, 
+                                                 translator: @translator, 
+                                                 tour_guide: @tour_guide }

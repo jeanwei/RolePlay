@@ -1,0 +1,6 @@
+.col-sm-3
+  %h3
+    Tourist
+  = link_to 'Edit Profile', edit_tourist_path(@tourist)
+.col-sm-9
+  = render partial: 'info', locals: { tourist: @tourist }

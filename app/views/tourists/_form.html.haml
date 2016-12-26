@@ -1,0 +1,7 @@
+.form-group
+  .control-label.col-sm-2
+    = f.label :year_of_birth, 'Year Of Birth'
+  .col-sm-6
+    = select_year(start_year, field_name: :year_of_birth,
+                  start_year: start_year, end_year: start_year - 60,
+                  prefix: 'tourist')

@@ -1,0 +1,10 @@
+%table.table.table-hover#translator-info{ style: 'margin-top: 20px;' }
+  %thead
+    %tr
+      %th
+        %strong My Tourists as Translator
+  %tbody
+    - user.tourists.each do |tourist|
+      %tr
+        %td
+          = tourist.email

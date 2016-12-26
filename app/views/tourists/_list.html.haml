@@ -1,0 +1,26 @@
+%table.table.table-hover#assign_table{ style: 'margin-top: 20px;' }
+  %thead
+    %tr
+      %th
+        %strong Email
+      %th
+        %strong Translator
+      %th
+        %strong Tour Guide
+  %tbody
+    - tourists.each do |tourist|
+      %tr{ id: "tourist-#{tourist.id}" }
+        %td
+          = tourist.email
+        %td
+          - if tourist.translator
+            = tourist.translator.email
+          - elsif translator
+            = link_to 'Be Translator', tourist_assigned_to_path(tourist,
+              'translator', translator), method: :patch
+        %td
+          - if tourist.tour_guide
+            = tourist.tour_guide.email
+          - elsif tour_guide
+            = link_to 'Be Tour Guide', tourist_assigned_to_path(tourist,
+              'tour_guide', tour_guide), method: :patch

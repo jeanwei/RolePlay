@@ -1,0 +1,10 @@
+%table.table.table-hover#jd-info{ style: 'margin-top: 20px;' }
+  %thead
+    %tr
+      %th
+        %strong My Tourists as Job Developer
+  %tbody
+    - user.tourists.each do |tourist|
+      %tr
+        %td
+          = tourist.email

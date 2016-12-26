@@ -1,0 +1,11 @@
+.col-xs-6.col-xs-offset-3
+  .jumbotron
+    %h2 Tourist Registration
+    = form_for @tourist, html: { class: 'form-horizontal' } do |f|
+      = render 'shared/error_messages', object: @tourist
+      = f.fields_for :profile do |prf|
+        = render 'users/subform', f: prf
+      .form-group
+        = f.button class: "btn btn-primary" do 
+          Sign Up
+
